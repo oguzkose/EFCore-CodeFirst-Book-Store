@@ -16,3 +16,6 @@ C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAcces
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.json
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.genruntimeconfig.cache

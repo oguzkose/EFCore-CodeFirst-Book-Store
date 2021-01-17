@@ -17,19 +17,24 @@ namespace BookStore.Controllers
         }
         public IActionResult Index()
         {
-            var bookEntities = _service.GetAllBooks();
-            var model = new List<BookViewModel>();
+            var bookEntities = _service.GetAllBooks(); /*----- Lazy Loading ----- */
+            //var bookEntities = _service.GetBooksWithEagerLoading();
+            var bookListModel = new List<BookViewModel>();
             foreach (var entity in bookEntities)
             {
-                model.Add(new BookViewModel
+                var bookModel = new BookViewModel
                 {
                     Id = entity.Id,
                     Name = entity.Name,
-                    Author = entity.Author,
-                    Publisher = entity.Publisher
-                });
+                    Publisher = entity.Publisher.Name
+                };
+                foreach (var item in entity.BookAuthors)
+                {
+                    bookModel.Author += item.Author.Name +" ";
+                }
+                bookListModel.Add(bookModel);
             }
-            return View(model);
+            return View(bookListModel);
         }
     }
 }

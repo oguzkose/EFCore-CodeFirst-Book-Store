@@ -4,14 +4,11 @@ using System.Text;
 
 namespace DataAccessLayer.Entities
 {
-    public class Book
+    public class Publisher
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual Publisher Publisher { get; set; }
-
-        public virtual ICollection<BookAuthor> BookAuthors { get; set; }
-
+        public string Address { get; set; }
 
     }
 }

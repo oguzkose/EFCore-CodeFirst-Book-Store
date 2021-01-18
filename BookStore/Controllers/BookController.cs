@@ -28,13 +28,16 @@ namespace BookStore.Controllers
                     Name = entity.Name,
                     Publisher = entity.Publisher.Name
                 };
+
                 foreach (var item in entity.BookAuthors)
-                {
-                    bookModel.Author += item.Author.Name +" ";
+                {                  
+                        bookModel.Author += item.Author.Name + ", ";                                     
                 }
+
                 bookListModel.Add(bookModel);
             }
             return View(bookListModel);
         }
+        
     }
 }

@@ -792,3 +792,4 @@ C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\BookStore
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\BookStore\obj\Debug\net5.0\Razor\Views\Book\Index.cshtml.g.cs
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\BookStore\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Oğuz KÖSE\source\repos\oguzkose\EFCore-CodeFirst-Book-Store\BookStore\obj\Debug\net5.0\Razor\Views\Author\Add.cshtml.g.cs

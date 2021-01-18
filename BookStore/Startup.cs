@@ -28,9 +28,15 @@ namespace BookStore
         {
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
+            //Book
             services.AddDbContext<BookContext>();
             services.AddTransient<BookService>();
             services.AddTransient<BookRepository>();
+            //Author
+            services.AddTransient<AuthorService>();
+            services.AddTransient<AuthorRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,8 +63,9 @@ namespace BookStore
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Book}/{action=Index}/{id?}");
-            });
+                    //pattern: "{controller=Book}/{action=Index}/{id?}");
+                    pattern: "{controller=Author}/{action=Add}/{id?}");
+        });
         }
     }
 }

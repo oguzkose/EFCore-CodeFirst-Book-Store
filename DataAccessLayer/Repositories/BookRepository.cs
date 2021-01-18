@@ -14,11 +14,12 @@ namespace DataAccessLayer.Repositories
         public BookRepository(BookContext context) : base(context)
         {
         }
-        public List<Book> GetBooksWithEagerLoading()
-        {
-            return _context.Books
-                .Include(x=>x.Publisher)
-                .ToList();
-        }
+        //public List<Book> GetBooksWithEagerLoading()
+        //{
+        //    return _context.Books
+        //        .Include(x=>x.Publisher)
+        //        .Include(y=>y.BookAuthors)
+        //        .ToList();
+        //}
     }
 }

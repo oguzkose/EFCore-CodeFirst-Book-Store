@@ -20,10 +20,10 @@ namespace Service
             return _repository.GetAll().ToList();
 
         }
-        public List<Book> GetBooksWithEagerLoading()
-        {
-            return _repository.GetBooksWithEagerLoading();
-        }
+        //public List<Book> GetBooksWithEagerLoading()
+        //{
+        //    return _repository.GetBooksWithEagerLoading();
+        //}
         
     }
 }

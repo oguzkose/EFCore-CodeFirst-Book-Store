@@ -34,7 +34,8 @@ namespace DataAccessLayer.Repositories.Base
 
         public void Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Update(TEntity entity)

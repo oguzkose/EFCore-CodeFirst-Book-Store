@@ -13,9 +13,9 @@ namespace Service
         {
             _repository = repository;
         }
-        public void Add(Author author)
+        public int Add(Author author)
         {
-            _repository.Insert(author);
+           return _repository.Insert(author);
         }
     }
 }

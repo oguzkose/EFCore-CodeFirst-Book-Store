@@ -1,4 +1,5 @@
-﻿using BookStore.Models;
+﻿using AutoMapper;
+using BookStore.Models;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Service;
@@ -12,9 +13,11 @@ namespace BookStore.Controllers
     public class AuthorController : Controller
     {
         private readonly AuthorService _service;
-        public AuthorController(AuthorService service)
+        private readonly IMapper _mapper;
+        public AuthorController(AuthorService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
@@ -25,16 +28,13 @@ namespace BookStore.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(AuthorViewModel model)
+        public IActionResult Add(AuthorInsertModel model)
         {
-            var entities = new Author
-            {
-                Name=model.Name,
-                Birthdate=model.Birthdate
-            };
-            _service.Add(entities);
+           
+            var affectedRowsCount = _mapper.Map<Author>(model);
+            _service.Add(affectedRowsCount);
 
-            return RedirectToAction(nameof(Index), "Book");
+            return View(model);
         }
     }
 }

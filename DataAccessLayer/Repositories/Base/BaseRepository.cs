@@ -32,10 +32,10 @@ namespace DataAccessLayer.Repositories.Base
             return entity;
         }
 
-        public void Insert(TEntity entity)
+        public int Insert(TEntity entity)
         {
             _context.Add(entity);
-            _context.SaveChanges();
+           return  _context.SaveChanges();
         }
 
         public void Update(TEntity entity)

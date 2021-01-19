@@ -1,4 +1,5 @@
-﻿using BookStore.Models;
+﻿using AutoMapper;
+using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Service;
 using System;
@@ -11,9 +12,11 @@ namespace BookStore.Controllers
     public class BookController : Controller
     {
         private readonly BookService _service;
-        public BookController(BookService service)
+        private readonly IMapper _mapper;
+        public BookController(BookService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
@@ -21,19 +24,8 @@ namespace BookStore.Controllers
             //var bookEntities = _service.GetBooksWithEagerLoading();
             var bookListModel = new List<BookViewModel>();
             foreach (var entity in bookEntities)
-            {
-                var bookModel = new BookViewModel
-                {
-                    Id = entity.Id,
-                    Name = entity.Name,
-                    Publisher = entity.Publisher.Name
-                };
-
-                foreach (var item in entity.BookAuthors)
-                {                  
-                        bookModel.Author += item.Author.Name + ", ";                                     
-                }
-
+            {                
+                var bookModel = _mapper.Map<BookViewModel>(entity);             
                 bookListModel.Add(bookModel);
             }
             return View(bookListModel);

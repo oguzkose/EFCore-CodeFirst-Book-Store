@@ -1,3 +1,4 @@
+using AutoMapper;
 using DataAccessLayer.Context;
 using DataAccessLayer.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +29,8 @@ namespace BookStore
         {
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
+            //AutoMapper
+            services.AddAutoMapper(typeof(Startup));
             //Book
             services.AddDbContext<BookContext>();
             services.AddTransient<BookService>();

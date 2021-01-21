@@ -1,15 +1,20 @@
-﻿@model BookStore.Models.AuthorInsertModel
+﻿@model BookStore.Models.PublisherInsertViewModel
 
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Insert";
 }
-<h1>Add</h1>
+@if (Convert.ToInt32(ViewData["AffectedRowsCount"]) >0)
+{
+    <div class="alert alert-success"><p>Publisher Veritabanına kayıt edildi</p></div>
+ 
+}
+<h1>Insert</h1>
 
-<h4>AuthorViewModel</h4>
+<h4>PublisherInsertViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Add">
+        <form asp-action="Insert">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -17,9 +22,9 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Birthdate" class="control-label"></label>
-                <input asp-for="Birthdate" class="form-control" />
-                <span asp-validation-for="Birthdate" class="text-danger"></span>
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -29,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-action="Index" asp-controller="Book">Back too List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

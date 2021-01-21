@@ -38,6 +38,9 @@ namespace BookStore
             //Author
             services.AddTransient<AuthorService>();
             services.AddTransient<AuthorRepository>();
+            //Publisher
+            services.AddTransient<PublisherService>();
+            services.AddTransient<PublisherRepository>();
 
 
         }
@@ -67,7 +70,8 @@ namespace BookStore
                 endpoints.MapControllerRoute(
                     name: "default",
                     //pattern: "{controller=Book}/{action=Index}/{id?}");
-                    pattern: "{controller=Author}/{action=Add}/{id?}");
+                    //pattern: "{controller=Author}/{action=Add}/{id?}");
+                    pattern: "{controller=Publisher}/{action=Insert}/{id?}");
         });
         }
     }

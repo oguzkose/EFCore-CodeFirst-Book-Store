@@ -17,5 +17,15 @@ namespace Service
         {
            return _repository.Insert(author);
         }
+        public int Update(Author author)
+        {
+            return _repository.Update(author);
+        }
+
+        public Author GetById(int id)
+        {
+            var entity =_repository.GetById(id);
+            return entity;
+        }
     }
 }

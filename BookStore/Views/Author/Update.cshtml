@@ -1,16 +1,25 @@
-﻿@model BookStore.Models.AuthorInsertModel
+﻿@model BookStore.Models.AuthorUpdateViewModel
 
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Update";
 }
-<h1>Add</h1>
 
-<h4>AuthorViewModel</h4>
+<h1>Update</h1>
+@if (Convert.ToInt32(ViewData["AffectedRowsCount"]) > 0)
+{
+    <div class=" alert alert-success"><p>1 author güncellendi</p></div>
+}
+<h4>AuthorUpdateViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Add">
+        <form asp-action="Update">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" disabled/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -22,14 +31,14 @@
                 <span asp-validation-for="Birthdate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" asp-controller="Book">Back too List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

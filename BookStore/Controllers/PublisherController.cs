@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace BookStore.Controllers
 {
-    public class AuthorController : Controller
+    public class PublisherController : Controller
     {
-        private readonly AuthorService _service;
+        private readonly PublisherService _service;
         private readonly IMapper _mapper;
-        public AuthorController(AuthorService service, IMapper mapper)
+        public PublisherController(PublisherService service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;
@@ -23,32 +23,32 @@ namespace BookStore.Controllers
         {
             return View();
         }
-        public IActionResult Add()
+        public IActionResult Insert()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Add(AuthorInsertModel model)
+        public IActionResult Insert(PublisherInsertViewModel model)
         {
-           
-            var entity = _mapper.Map<Author>(model);
-            _service.Add(entity);
-
+            var entity = _mapper.Map<Publisher>(model);
+            var affectedRowsCount = _service.Add(entity);
+            ViewData["AffectedRowsCount"] = affectedRowsCount;
             return View(model);
         }
         public IActionResult Update(int id)
         {
             var entity = _service.GetById(id);
-            var model = _mapper.Map<AuthorUpdateViewModel>(entity);
+            var model = _mapper.Map<PublisherUpdateViewModel>(entity);
             return View(model);
         }
         [HttpPost]
-        public IActionResult Update(AuthorUpdateViewModel model)
+        public IActionResult Update(PublisherUpdateViewModel model)
         {
-            var entity = _mapper.Map<Author>(model);
-            var affectedRowsCount = _service.Update(entity);
-            ViewData["AffectedRowsCount"] = affectedRowsCount;
-            return View(model);  
+            var entity = _mapper.Map<Publisher>(model);
+            _service.Update(entity);
+
+            return View(model);
         }
+
     }
 }

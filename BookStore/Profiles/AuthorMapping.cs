@@ -13,9 +13,11 @@ namespace BookStore.Profiles
         public AuthorMapping()
         {
             CreateMap<AuthorInsertModel, Author>();
-                //.ForMember(x => x.Name, cfg => cfg.MapFrom(y => y.Name))
+            //.ForMember(x => x.Name, cfg => cfg.MapFrom(y => y.Name))
 
-                //.ForMember(z => z.Birthdate, cfg => cfg.MapFrom(t => t.Birthdate));
+            //.ForMember(z => z.Birthdate, cfg => cfg.MapFrom(t => t.Birthdate));
+            CreateMap<Author, AuthorUpdateViewModel>();
+            CreateMap<AuthorUpdateViewModel, Author>();
 
                 
         }

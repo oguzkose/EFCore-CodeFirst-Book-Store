@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace BookStore.Models
 {
-    public class AuthorInsertModel
+    public class AuthorUpdateViewModel
     {
-        //public int Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
-        //[DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+
         public DateTime? Birthdate { get; set; }
     }
 }
